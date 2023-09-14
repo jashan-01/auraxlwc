@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global">
+    <aura:attribute type='string' name='messageInput' default='' />
+
+    <lightning:card title="Publisher Aura">
+        <div class="slds-var-p-around_medium lgc-bg">
+            <lightning:input name="msg" label="Enter some text" value="{!v.messageInput}" /><br/>
+            <lightning:button label="Publish" onclick="{!c.publishMessage}" />
+            <lightning:messageChannel type="myMessageChannel__c" aura:id="SAMPLEMC"/>
+        </div>
+    </lightning:card>
+</aura:component>
